@@ -61,6 +61,25 @@ christian1@django:/mis_proyectos/entorno_1$ source bin/activate
 
 164.92.107.9:8000
 
+Para bajar el puerto 8000:
+```
+(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ sudo lsof -i -P -n | grep LISTEN
+systemd        1            root   68u  IPv6    6515      0t0  TCP *:22 (LISTEN)
+systemd-r    675 systemd-resolve   15u  IPv4    6213      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r    675 systemd-resolve   17u  IPv4    6215      0t0  TCP 127.0.0.54:53 (LISTEN)
+sshd         982            root    3u  IPv6    6515      0t0  TCP *:22 (LISTEN)
+postgres    2852        postgres    6u  IPv6   16674      0t0  TCP [::1]:5432 (LISTEN)
+postgres    2852        postgres    7u  IPv4   16675      0t0  TCP 127.0.0.1:5432 (LISTEN)
+nginx     199082            root    7u  IPv4 1316366      0t0  TCP *:80 (LISTEN)
+nginx     199082            root    8u  IPv6 1316367      0t0  TCP *:80 (LISTEN)
+nginx     199083        www-data    7u  IPv4 1316366      0t0  TCP *:80 (LISTEN)
+nginx     199083        www-data    8u  IPv6 1316367      0t0  TCP *:80 (LISTEN)
+python3   229926      christian1    3u  IPv4 1591811      0t0  TCP *:8000 (LISTEN)
+(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ sudo kill -9 229926
+(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ python3 manage.py runserver 0.0.0.0:8000
+```
+
+El archivo local.py en el servidor queda:
 ```bash
 from .base import *
 
