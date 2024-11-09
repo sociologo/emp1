@@ -48,3 +48,15 @@ MEDIA_ROOT = BASE_DIR / ("media")
 ```
 
 
+Desplegamos nuestro proyecto en el servidor así:
+```
+C:\Windows\System32>ssh christian1@164.92.107.9
+password: xxxxxxxxxx
+
+christian1@django:/$ cd /mis_proyectos/entorno_1
+christian1@django:/mis_proyectos/entorno_1$ source bin/activate
+(entorno_1) christian1@django:/mis_proyectos/entorno_1$ cd emp1
+(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ python3 manage.py runserver 0.0.0.0:8000
+```
+
+164.92.107.9:8000
