@@ -12,6 +12,10 @@ chris\
 christian1**\
 \*l\*\*\*g\*\*\*\*
 
+Mi actual usuario linux de DigitalOcean es:\
+**christian1** y al igual que para roor mi contraseña es:\
+\*l\*\*\*g\*\*\*\*
+
 Éste es el primer proyecto django basado en el curso Udemy.
 
 Los hemos diseñado asi:
