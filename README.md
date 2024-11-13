@@ -4,9 +4,13 @@
 
 ## IMPORTANTE
 
-**Credenciales para la aplicacion en local de emp1:\
+**Credenciales para admin de la aplicacion en local de emp1:\
 chris\
 123456**
+
+**Credenciales para admin de la aplicacion en el servidor DigitalOcean de emp1:\
+christian1\
+*l***g****
 
 Éste es el primer proyecto django basado en el curso Udemy.
 
