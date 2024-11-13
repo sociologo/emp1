@@ -2,18 +2,18 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 CSRF_TRUSTED_ORIGINS = ['https://sociolab.cl']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bded6',
-        'USER ': 'christian1',
-        'PASSWORD': '123456',
+        'NAME': 'dbempleado',
+        'USER ': 'chris',
+        'PASSWORD': 'nueva123456',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 

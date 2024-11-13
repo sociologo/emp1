@@ -1,4 +1,22 @@
+
+
 # emp1
+
+## IMPORTANTE
+
+**Credenciales para admin de la aplicacion en local de emp1:\
+chris\
+123456**
+
+**Credenciales para admin de la aplicacion en el servidor DigitalOcean de emp1:\
+christian1**\
+\*l\*\*\*g\*\*\*\*
+
+Mi actual usuario linux de DigitalOcean es:\
+**christian1** y al igual que para root su contraseña es:\
+\*l\*\*\*g\*\*\*\*
+
+---
 
 Éste es el primer proyecto django basado en el curso Udemy.
 
@@ -17,8 +35,11 @@ C:\mis_entornos\entorno_1\Scripts>activate
 (entorno_1) C:\mis_entornos\entorno_1\Scripts>
 (entorno_1) C:\mis_entornos\entorno_1\Scripts>cd /
 (entorno_1) C:\>
-(entorno_1) C:\mis_proyectos\emp1>python manage.py runserver
+(entorno_1) C:\mis_proyectos\emp1>python manage.py runserver --settings=empleado.settings.local
 ```
+
+El archivo **local.py** es:
+
 ```bash
 from .base import *
 
@@ -47,7 +68,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / ("media")
 ```
 
-
 Desplegamos nuestro proyecto en el servidor así:
 ```
 C:\Windows\System32>ssh christian1@164.92.107.9
@@ -56,30 +76,11 @@ password: xxxxxxxxxx
 christian1@django:/$ cd /mis_proyectos/entorno_1
 christian1@django:/mis_proyectos/entorno_1$ source bin/activate
 (entorno_1) christian1@django:/mis_proyectos/entorno_1$ cd emp1
-(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ python3 manage.py runserver 0.0.0.0:8000
+(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ sudo supervisorctl restart empleado
 ```
 
-164.92.107.9:8000
+El archivo **prod.py** es:
 
-Para bajar el puerto 8000:
-```
-(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ sudo lsof -i -P -n | grep LISTEN
-systemd        1            root   68u  IPv6    6515      0t0  TCP *:22 (LISTEN)
-systemd-r    675 systemd-resolve   15u  IPv4    6213      0t0  TCP 127.0.0.53:53 (LISTEN)
-systemd-r    675 systemd-resolve   17u  IPv4    6215      0t0  TCP 127.0.0.54:53 (LISTEN)
-sshd         982            root    3u  IPv6    6515      0t0  TCP *:22 (LISTEN)
-postgres    2852        postgres    6u  IPv6   16674      0t0  TCP [::1]:5432 (LISTEN)
-postgres    2852        postgres    7u  IPv4   16675      0t0  TCP 127.0.0.1:5432 (LISTEN)
-nginx     199082            root    7u  IPv4 1316366      0t0  TCP *:80 (LISTEN)
-nginx     199082            root    8u  IPv6 1316367      0t0  TCP *:80 (LISTEN)
-nginx     199083        www-data    7u  IPv4 1316366      0t0  TCP *:80 (LISTEN)
-nginx     199083        www-data    8u  IPv6 1316367      0t0  TCP *:80 (LISTEN)
-python3   229926      christian1    3u  IPv4 1591811      0t0  TCP *:8000 (LISTEN)
-(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ sudo kill -9 229926
-(entorno_1) christian1@django:/mis_proyectos/entorno_1/emp1$ python3 manage.py runserver 0.0.0.0:8000
-```
-
-El archivo local.py en el servidor queda:
 ```bash
 from .base import *
 
@@ -94,16 +95,23 @@ DATABASES = {
         'USER ': 'christian1',
         'PASSWORD': '123456',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
-STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / ("media")
+MEDIA_ROOT = BASE_DIR / 'media'
 ```
+
+
+
+
+
+
+
+
+
