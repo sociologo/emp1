@@ -17,7 +17,7 @@ C:\mis_entornos\entorno_1\Scripts>activate
 (entorno_1) C:\mis_entornos\entorno_1\Scripts>
 (entorno_1) C:\mis_entornos\entorno_1\Scripts>cd /
 (entorno_1) C:\>
-(entorno_1) C:\mis_proyectos\emp1>python manage.py runserver
+(entorno_1) C:\mis_proyectos\emp1>python manage.py runserver --settings=empleado.settings.local
 ```
 ```bash
 from .base import *
