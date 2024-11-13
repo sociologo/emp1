@@ -10,7 +10,7 @@ chris\
 
 **Credenciales para admin de la aplicacion en el servidor DigitalOcean de emp1:\
 christian1\
-*l***g****
+\*l\*\*\*g\*\*\*\*
 
 Éste es el primer proyecto django basado en el curso Udemy.
 
