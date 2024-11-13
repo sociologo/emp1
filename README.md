@@ -4,9 +4,9 @@
 
 ## IMPORTANTE
 
-Credenciales para la aplicacion en local de emp1:/
-chris/
-123456
+**Credenciales para la aplicacion en local de emp1:\
+chris\
+123456**
 
 Éste es el primer proyecto django basado en el curso Udemy.
 
