@@ -28,7 +28,7 @@ Lo que hacemos es tener los entornos separados de los proyectos. Atención con �
 
 Desplegamos nuestro proyecto en local así:
 
-```
+```bash
 C:\> cd \mis_entornos\entorno_1\Scripts
 C:\mis_entornos\entorno_1\Scripts> activate
 (entorno_1) C:\mis_entornos\entorno_1\Scripts> cd \
