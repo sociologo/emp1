@@ -29,13 +29,11 @@ Lo que hacemos es tener los entornos separados de los proyectos. Atención con �
 Desplegamos nuestro proyecto en local así:
 
 ```
-C:\>cd mis_entornos
-C:\mis_entornos>cd entorno_1/Scripts
-C:\mis_entornos\entorno_1\Scripts>activate
-(entorno_1) C:\mis_entornos\entorno_1\Scripts>
-(entorno_1) C:\mis_entornos\entorno_1\Scripts>cd /
-(entorno_1) C:\>
-(entorno_1) C:\mis_proyectos\emp1>python manage.py runserver --settings=empleado.settings.local
+C:\> cd \mis_entornos\entorno_1\Scripts
+C:\mis_entornos\entorno_1\Scripts> activate
+(entorno_1) C:\mis_entornos\entorno_1\Scripts> cd \
+(entorno_1) C:\> cd \mis_proyectos\emp1
+(entorno_1) C:\mis_proyectos\emp1> python manage.py runserver --settings=empleado.settings.local
 ```
 
 El archivo **local.py** es:
@@ -45,16 +43,17 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dbempleado',
         'USER ': 'chris',
-        'PASSWORD': 'nueva123456',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
         'PORT': '5432',
+        'OPTIONS': { 'client_encoding': 'UTF8', },
     }
 }
 
