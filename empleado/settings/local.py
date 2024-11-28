@@ -2,14 +2,14 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dbempleado',
         'USER ': 'chris',
-        'PASSWORD': 'nueva123456',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': { 'client_encoding': 'UTF8', },
