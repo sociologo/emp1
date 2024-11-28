@@ -4,8 +4,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://sociolab.cl']
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -14,6 +12,7 @@ DATABASES = {
         'PASSWORD': 'nueva123456',
         'HOST': 'localhost',
         'PORT': '5432',
+        'OPTIONS': { 'client_encoding': 'UTF8', },
     }
 }
 
